@@ -89,6 +89,16 @@ class ApiV1CheckoutRequest extends ApiV1AbstractRequest
         $this->setParameter('memo', $memo);
     }
 
+    public function getGuaranteeOffered()
+    {
+        return $this->getParameter('guaranteeOffered');
+    }
+
+    public function setGuaranteeOffered($value)
+    {
+        return $this->setParameter('guaranteeOffered', $value);
+    }
+
     public function getData()
     {
         return [
@@ -103,6 +113,7 @@ class ApiV1CheckoutRequest extends ApiV1AbstractRequest
             'currencyCode' => $this->getCurrency(),
             'receiverList.receiver(0).email' => $this->getReceiverEmail(),
             'receiverList.receiver(0).amount' => $this->getAmount(),
+            'guaranteeOffered' => $this->getGuaranteeOffered()
         ];
     }
 
