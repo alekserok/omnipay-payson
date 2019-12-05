@@ -14,6 +14,6 @@ class ApiV2CompleteCheckoutResponse extends AbstractResponse
      */
     public function isSuccessful()
     {
-        return $this->getData()['status'] = 'readyToShip';
+        return $this->getData()['status'] == 'readyToShip';
     }
 }
